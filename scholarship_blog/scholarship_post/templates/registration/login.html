@@ -1,0 +1,39 @@
+{% extends 'scholarship_post/index.html'%}
+{% load static %}
+
+{% block css%}
+    <link rel="stylesheet" href="{% static 'scholarship_post/login.css' %}">
+{% endblock css%}
+
+{% block content %}
+<div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5 shadow-lg p-4 bg-white rounded">
+            <h2 class="text-center mb-4 text-primary fs-5">Let's Educate Kakuma</h2>
+
+            <form method="post" class="login">
+                {% csrf_token %}
+                {% for field in log_form %}
+                <div class="mb-3">
+                    {{ field.errors }}
+                    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                    {{ field }}
+                </div>
+                {% endfor %}
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary w-100 py-2 mt-3">Login</button>
+                </div>
+            </form>
+            <div class="text-center mt-4">
+                <p>New here? Sign up & Transform Lives</p>
+                <a href="{% url 'scholarship_post:user-registration' %}" class="text-decoration-none text-primary">Sign
+                    up</a>
+            </div>
+            <div class="text-center mt-2">
+                <p>Forgot Password?</p>
+                <a href="{% url 'password_reset' %}" class="text-decoration-none text-primary">Reset</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

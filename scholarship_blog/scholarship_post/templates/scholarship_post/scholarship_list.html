@@ -1,0 +1,63 @@
+{% extends 'scholarship_post/index.html'%}
+{% load static %}
+
+{% block css%}
+<link rel="stylesheet" href="{% static 'scholarship_post/scholarship_list.css' %}">
+{% endblock css%}
+
+{% block content %}
+
+
+<header>
+    <nav
+        class="navbar navbar-expand-lg {% if user.is_staff or user.is_superuser %}bg-secondary{% else %}bg-primary{% endif %}">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse justify-content-center p-2" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item mx-3 ">
+                        <a class="nav-link nav-hover" href="{% url 'scholarship_post:home' %}">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+{% for message in messages %}
+{% if message %}
+<div class="{{ message.tags }} text-success text-center mt-2">
+    {{ message }}
+</div>
+{% endif %}
+{% endfor %}
+
+<div class="container">
+    <div class="row g-4">
+        {% for scholarship in scholarships %}
+        <div class="col-md-6">
+            <div class="scholarship-card bg-white shadow-lg mt-3 p-3 rounded">
+                <h2 class="fs-5 text-primary">{{ scholarship.title }}</h2>
+                <p>{{ scholarship.content|truncatewords:20 }}</p>
+                <a href="{% url 'scholarship_post:scholarship-detail' scholarship.pk %}" class="readmore mb-2">Read
+                    More</a>
+                <p><span class="text-primary">Eligibility Criteria</span> <br>{{ scholarship.eligibility_criteria }}
+                </p>
+                <p><span class="text-primary">Deadline</span><br>{{ scholarship.dead_line }}</p>
+                <a href="{{ scholarship.link }}" class="readmore">Apply Here</a>
+                <p class="username fs-6">Posted by {{ scholarship.created_by.username }} on {{ scholarship.created_at }}
+                </p>
+            </div>
+        </div>
+        {% empty %}
+        <p>No scholarships available.</p>
+        {% endfor %}
+    </div>
+</div>
+
+<div>
+    <footer class="footer text-center text-white {% if user.is_staff or user.is_superuser %}bg-secondary{% else %}bg-primary{% endif %} mt-5 p-3">
+        <p class="pt-2">&copy; 2024 Let's Educate Kakuma | All Rights Reserved.</p>
+    </footer>
+
+</div>
+{% endblock content %}

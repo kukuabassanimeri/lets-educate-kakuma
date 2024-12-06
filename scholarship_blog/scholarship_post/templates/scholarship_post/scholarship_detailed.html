@@ -1,0 +1,53 @@
+{% extends 'scholarship_post/index.html'%}
+{% load static %}
+
+{% block css%}
+    <link rel="stylesheet" href="{% static 'scholarship_post/scholarship_detail.css' %}">
+{% endblock css%}
+
+{% block content %}
+<div class="row mt-5">
+
+    <div class="col-md-3">
+
+    </div>
+
+    <div class="col-md-6 bg-white shadow-lg mt-5 p-4 rounded">
+        {% for message in messages %}
+        {% if message %}
+        <div class="alert alert-{{ message.tags }} text-danger">
+            {{ message }}
+        </div>
+        {% endif %}
+        {% endfor %}
+
+        <h1 class="fs-5 text-primary">{{ scholarship.title }}</h1>
+        <p>{{ scholarship.content }}</p>
+        <p> <span class="text-primary">Eligibility Criteria </span><br>{{ scholarship.eligibility_criteria }}</p>
+        <p><span class="text-primary">Deadline</span> - {{ scholarship.dead_line }}</p>
+        <p>Link <a href="{{ scholarship.link }}" class="text-decoration-none"> <br>{{ scholarship.link }}</a></p>
+        <p> <span class="text-primary">Posted on</span> - {{ scholarship.created_at }}</p>
+        <p><span class="text-primary">Posted By </span>- {{ scholarship.created_by.username }}</p>
+
+
+        <div class="text-center">
+            <a href="{% url 'scholarship_post:scholarship-blog-list' %}"
+                class="text-decoration-none btn btn-secondary btn-sm mx-1">Back</a>
+
+            {% if user.is_staff or user.is_superuser %}
+            <a href="{% url 'scholarship_post:update-scholarship' scholarship.pk %}"
+                class="text-decoration-none btn btn-primary btn-sm mx-1">Update</a>
+            <a href="{% url 'scholarship_post:delete-scholarship' scholarship.pk %}"
+                class="text-decoration-none btn btn-danger btn-sm mx-1">Delete</a>
+            {% endif %}
+        </div>
+
+
+    </div>
+
+    <div class="col-md-3">
+
+    </div>
+
+</div>
+{% endblock content %}

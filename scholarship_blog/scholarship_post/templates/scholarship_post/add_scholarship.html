@@ -1,0 +1,62 @@
+{% extends 'scholarship_post/index.html'%}
+{% load static %}
+
+{% block css%}
+    <link rel="stylesheet" href="{% static 'scholarship_post/add_scholarship.css' %}">
+{% endblock css%}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 form-container col-lg-5 shadow-lg p-4 bg-white rounded">
+            <p class="form-header fs-5 text-primary text-center">Add Scholarship</p>
+
+            <form method="post" class="add">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label for="id_title" class="form-label text-primary">Title</label>
+                    {{ s_form.title }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="id_content" class="form-label text-primary">Content</label>
+                    {{ s_form.content }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="id_eligibility_criteria" class="form-label text-primary">Eligibility Criteria</label>
+                    {{ s_form.eligibility_criteria }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="id_dead_line" class="form-label text-primary">Deadline</label>
+                    {{ s_form.dead_line }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="id_link" class="form-label text-primary">Link</label>
+                    {{ s_form.link }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="id_created_at" class="form-label text-primary">Posted On</label>
+                    {{ s_form.created_at }}
+                </div>
+
+                <div class="mb-3">
+                    <label for="id_created_by" class="form-label text-primary">Posted By</label>
+                    {{ s_form.created_by }}
+                </div>
+
+                <button type="submit" class="btn btn-success w-100 mb-3">Add</button>
+                <div class="text-center">
+                    <a href="{% url 'scholarship_post:home' %}" class="text-decoration-none">Back</a>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+{% endblock content %}
