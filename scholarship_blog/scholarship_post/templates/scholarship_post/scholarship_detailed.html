@@ -2,25 +2,25 @@
 {% load static %}
 
 {% block css%}
-    <link rel="stylesheet" href="{% static 'scholarship_post/scholarship_detail.css' %}">
+<link rel="stylesheet" href="{% static 'scholarship_post/scholarship_detail.css' %}">
 {% endblock css%}
 
 {% block content %}
 <div class="row mt-5">
+    {% if not user.is_staff and not user.is_superuser %}
+    <p class="text-center">Submit your application using the link provided. <br>
+        <span>Take care of the <span class="text-primary">deadline</span></span>
+    </p>
+
+    {% else %}
+    <p class="text-center">Update or delete scholarship if the deadline has elsaped</p>
+    {% endif %}
 
     <div class="col-md-3">
 
     </div>
 
-    <div class="col-md-6 bg-white shadow-lg mt-5 p-4 rounded">
-        {% for message in messages %}
-        {% if message %}
-        <div class="alert alert-{{ message.tags }} text-danger">
-            {{ message }}
-        </div>
-        {% endif %}
-        {% endfor %}
-
+    <div class="col-md-6 bg-white shadow-lg mt-2 p-4 rounded">
         <h1 class="fs-5 text-primary">{{ scholarship.title }}</h1>
         <p>{{ scholarship.content }}</p>
         <p> <span class="text-primary">Eligibility Criteria </span><br>{{ scholarship.eligibility_criteria }}</p>
@@ -50,4 +50,5 @@
     </div>
 
 </div>
+
 {% endblock content %}

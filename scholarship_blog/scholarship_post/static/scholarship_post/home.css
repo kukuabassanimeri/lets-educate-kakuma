@@ -55,7 +55,7 @@ body {
     transform: scaleX(1);
 }
 
-/* Navbar overall style */
+
 .navbar {
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -70,7 +70,7 @@ body {
 }
 
 .navbar .nav-item {
-    margin: 0 10px; /* Add extra spacing between items */
+    margin: 0 10px;
 }
 
 
