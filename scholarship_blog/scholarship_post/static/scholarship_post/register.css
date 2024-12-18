@@ -7,9 +7,16 @@
 
 body{
     overflow-x: hidden;
-    background-image: url("../media/lek.jpg"); 
+    /*background-image: url("../media/lek.jpg"); */
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
     height: 100vh;
+}
+
+@media (max-width: 576px) {
+    .custom-container {
+        margin: 15px;
+        
+    }
 }
