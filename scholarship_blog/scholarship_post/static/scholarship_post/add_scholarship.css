@@ -14,3 +14,11 @@ body{
     border-radius: 5px;
   
 }
+
+@media (max-width: 576px) {
+    .add-scholarship {
+        margin: 15px;
+        gap: 20px;
+        
+    }
+}

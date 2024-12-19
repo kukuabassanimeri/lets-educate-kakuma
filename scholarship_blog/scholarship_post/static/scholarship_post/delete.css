@@ -8,3 +8,11 @@ body{
     overflow-x: hidden;
     background-color: #f8f9fa;
 }
+
+@media (max-width: 576px) {
+    .delete-scholarship {
+        margin: 15px;
+        gap: 20px;
+        
+    }
+}

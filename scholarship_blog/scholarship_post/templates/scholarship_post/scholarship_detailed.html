@@ -6,21 +6,19 @@
 {% endblock css%}
 
 {% block content %}
-<div class="row mt-5">
+<div class="row mt-4 scholarship-detail">
     {% if not user.is_staff and not user.is_superuser %}
-    <p class="text-center">Submit your application using the link provided. <br>
-        <span>Take care of the <span class="text-primary">deadline</span></span>
-    </p>
+    <p class="text-start text-md-center fs-4 text-primary">Submit application using the link provided</p>
 
     {% else %}
-    <p class="text-center">Update or delete scholarship if the deadline has elsaped</p>
+    <p class="text-start text-md-center fs-4 text-primary">Update or delete scholarship</p>
     {% endif %}
 
     <div class="col-md-3">
 
     </div>
 
-    <div class="col-md-6 bg-white shadow-lg mt-2 p-4 rounded">
+    <div class="col-md-6 bg-white shadow-lg p-4 rounded">
         <h1 class="fs-5 text-primary">{{ scholarship.title }}</h1>
         <p>{{ scholarship.content }}</p>
         <p> <span class="text-primary">Eligibility Criteria </span><br>{{ scholarship.eligibility_criteria }}</p>
