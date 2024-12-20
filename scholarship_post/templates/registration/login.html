@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block css%}
-    <link rel="stylesheet" href="{% static 'scholarship_post/login.css' %}">
+<link rel="stylesheet" href="{% static 'scholarship_post/login.css' %}">
 {% endblock css%}
 
 {% block content %}
@@ -10,6 +10,14 @@
     <div class="row justify-content-center custom-container">
         <div class="col-md-6 col-lg-5 shadow-lg p-4 bg-white rounded">
             <h2 class="text-center mb-4 text-primary fs-5">Let's Educate Kakuma</h2>
+
+            {% for message in messages %}
+            {% if message %}
+            <div class="{{ message.tags }} text-success text-center mt-2">
+                {{ message }}
+            </div>
+            {% endif %}
+            {% endfor %}
 
             <form method="post" class="login">
                 {% csrf_token %}
