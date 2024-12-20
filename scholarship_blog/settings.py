@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-=v&$zf#g=u(im1aaddo$f8tm&jz#dpro#dwj(=oa&1l1w8ij0n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['lets-educate-kakuma.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
