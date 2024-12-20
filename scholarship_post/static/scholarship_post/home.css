@@ -223,3 +223,24 @@ body {
     }
 }
 
+
+
+@media (max-width: 768px) {
+    .carousel-item img{
+        width: 90%;
+        height: 20vh;
+        margin: 20px auto;
+        
+    }
+
+    .carousel-container {
+        margin-right: 10px; 
+        margin-left: 10px; 
+    }
+}
+
+.carousel-container {
+    margin-right: 40px; 
+    margin-left: 40px; 
+}
+
