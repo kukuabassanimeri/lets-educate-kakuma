@@ -71,7 +71,7 @@
                     <img src="{% static 'media/kak.jpg' %}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="{% static 'media/edu.jpg' %}" class="d-block w-100" alt="...">
+                    <img src="{% static 'media/kka.jpg' %}" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
                     <img src="{% static 'media/lek.jpg' %}" class="d-block w-100" alt="...">
@@ -102,7 +102,7 @@
 <!-- carousel ends here -->
 
 <div class="container">
-    <p class="username mt-2 text-start text-md-center welcome">Hello {{ user.username }} <i class="fa-regular fa-hand text-warning fs-4"></i></p>
+    <p class="username mt-2 text-start text-md-center welcome ">Hello {{ user.username }} <i class="fa-regular fa-hand text-warning fs-4"></i></p>
     <h1 class="fs-4 text-primary text-start text-md-center welcome">Welcome to Let's Educate Kakuma <br><span class="fs-6 username">Scholarship Opportunity Hub</span></h1>
 </div>
 
@@ -269,7 +269,7 @@
 </div>
 
 
-<div>
+<div class="footer">
     <footer class="footer text-center text-white {% if user.is_staff or user.is_superuser %}bg-secondary{% else %}bg-primary{% endif %} mt-5 p-3">
         <p class="pt-2">&copy; 2024 Let's Educate Kakuma | All Rights Reserved</p>
     </footer>

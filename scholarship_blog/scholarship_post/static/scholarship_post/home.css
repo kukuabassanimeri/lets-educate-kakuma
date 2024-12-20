@@ -35,7 +35,7 @@ body {
 }
 
 .nav-hover:hover {
-    background-color: #ffd700; 
+    background-color: #ffd700;
     color: #000; 
     transform: translateY(-3px); 
     border-radius: 5px;
@@ -53,19 +53,9 @@ body {
     transition: transform 0.3s ease;
 }
 
-
-@media (max-width: 576px) {
-    .nav-hover::after {
-        width: 10px;
-        height: 2px;
-        
-    }
-}
-
 .nav-hover:hover::after {
     transform: scaleX(1);
 }
-
 
 .navbar {
     padding: 10px 20px;
@@ -83,6 +73,23 @@ body {
 .navbar .nav-item {
     margin: 0 10px;
 }
+
+
+/* phone view */
+
+@media (max-width: 576px) {
+    .nav-hover:hover {
+        background-color: transparent; 
+        transform: none; 
+        color: white; 
+    }
+
+    .nav-hover::after {
+        width: 10px;
+        height: 2px;
+    }
+}
+
 
 
 @media (max-width: 576px) {
@@ -144,6 +151,75 @@ body {
     margin-left: 30px; 
 }
 
+@media (max-width: 576px) {
+    .footer{
+      padding-left: 30px;
+      padding-right: 30px;
+      
+    
+        
+    }
+}
+
+/* tablet view */
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .missionvision {
+        margin: 15px;
+        gap: 20px;
+        
+    }
+}
 
 
+@media (min-width: 577px) and (max-width: 768px) {
+    .nav-hover:hover {
+        background-color: transparent; 
+        transform: none; 
+        color: white; 
+    }
+
+    .nav-hover::after {
+        width: 10px;
+        height: 2px;
+    }
+}
+
+
+@media (min-width: 640px) {
+    .text {
+        padding-left: 30px;
+        padding-right: 30px;
+        
+    }
+}
+
+@media (min-width: 640px) {
+    .welcome{
+        padding-left: 20px;
+        padding-right: 30px;
+        
+    }
+}
+
+@media (max-width: 768px) {
+    header{
+      padding-left: 30px;
+      padding-top: 10px;
+      padding-right: 30px;
+      padding-bottom: 10;
+    
+        
+    }
+}
+
+@media (max-width: 768px) {
+    .footer{
+      padding-left: 30px;
+      padding-right: 30px;
+      
+    
+        
+    }
+}
 

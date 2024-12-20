@@ -7,6 +7,7 @@
 
 body{
     background-color: #f8f9fa;
+    overflow-x: hidden;
 }
 
 .scholarship-card{
@@ -74,6 +75,21 @@ body{
     margin: 0 10px;
 }
 
+/* phone view */
+
+@media (max-width: 576px) {
+    .nav-hover:hover {
+        background-color: transparent; 
+        transform: none; 
+        color: white; 
+    }
+
+    .nav-hover::after {
+        width: 10px;
+        height: 2px;
+    }
+}
+
 
 @media (max-width: 576px) {
     header{
@@ -91,6 +107,61 @@ body{
 }
 
 @media (max-width: 576px) {
+    .scholarships{
+        margin: 5px;
+        gap: 10px;
+        
+    }
+}
+
+@media (max-width: 576px) {
+    .footer{
+      padding-left: 30px;
+      padding-right: 30px;
+      
+    
+        
+    }
+}
+
+/* tablet view*/
+
+@media (max-width: 768px) {
+    .nav-hover:hover {
+        background-color: transparent; 
+        transform: none; 
+        color: white; 
+    }
+
+    .nav-hover::after {
+        width: 10px;
+        height: 2px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    header{
+      padding-left: 30px;
+      padding-top: 10px;
+      padding-right: 30px;
+      padding-bottom: 10;
+    
+        
+    }
+}
+
+@media (max-width: 768px) {
+    .footer{
+      padding-left: 30px;
+      padding-right: 30px;
+      
+    
+        
+    }
+}
+
+@media (max-width: 768px) {
     .scholarships{
         margin: 5px;
         gap: 10px;

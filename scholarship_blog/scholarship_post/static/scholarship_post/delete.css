@@ -9,10 +9,21 @@ body{
     background-color: #f8f9fa;
 }
 
+/* phone view */
 @media (max-width: 576px) {
     .delete-scholarship {
         margin: 15px;
         gap: 20px;
+        
+    }
+}
+
+/* tablet view */
+
+@media (max-width: 768px) {
+    .delete-scholarship {
+        margin: 10px;
+        gap: 30px;
         
     }
 }

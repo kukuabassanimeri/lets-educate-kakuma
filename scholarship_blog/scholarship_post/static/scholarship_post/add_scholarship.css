@@ -15,9 +15,19 @@ body{
   
 }
 
+/* phone view */
 @media (max-width: 576px) {
     .add-scholarship {
         margin: 15px;
+        gap: 20px;
+        
+    }
+}
+
+/* tablet view */
+@media (max-width: 768px) {
+    .add-scholarship {
+        margin: 20px;
         gap: 20px;
         
     }

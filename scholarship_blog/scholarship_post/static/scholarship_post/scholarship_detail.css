@@ -9,11 +9,21 @@ body{
     background-color: #f8f9fa; 
 }
 
-
+/* phone view */
 @media (max-width: 576px) {
     .scholarship-detail{
         margin: 20px;
         gap: 10px;
+        
+    }
+}
+
+/* tablet view */
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .scholarship-detail{
+        margin: 30px;
+        gap: 20px;
         
     }
 }
