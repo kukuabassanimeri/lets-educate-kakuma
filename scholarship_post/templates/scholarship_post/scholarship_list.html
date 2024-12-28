@@ -46,7 +46,7 @@
                 <p>{{ scholarship.content|linebreaks|truncatewords:20 }}</p>
                 <a href="{% url 'scholarship_post:scholarship-detail' scholarship.pk %}" class="readmore mb-2">Read
                     More</a>
-                <p><span class="text-primary">Eligibility Criteria</span> <br>{{ scholarship.eligibility_criteria|linebreaks }}</p>
+                <p><span class="text-primary">Eligibility Criteria</span> <br>{{ scholarship.eligibility_criteria|linenumbers|linebreaks }}</p>
                 </p>
                 <p><span class="text-primary">Deadline</span><br>{{ scholarship.dead_line }}</p>
                 <a href="{{ scholarship.link }}" class="readmore">Apply Here</a>
