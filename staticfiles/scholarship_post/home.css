@@ -91,38 +91,12 @@ body {
 }
 
 
-
-@media (max-width: 576px) {
-    .missionvision {
-        margin: 15px;
-        gap: 20px;
-        
-    }
-}
-
-@media (max-width: 576px) {
-    .text {
-        padding-left: 30px;
-        padding-right: 30px;
-        
-    }
-}
-
-
-@media (max-width: 576px) {
-    .welcome{
-        padding-left: 20px;
-        padding-right: 30px;
-        
-    }
-}
-
 @media (max-width: 576px) {
     header{
       padding-left: 30px;
       padding-top: 10px;
       padding-right: 30px;
-      padding-bottom: 10;
+      padding-bottom: 5px;
     
         
     }
@@ -150,24 +124,24 @@ body {
 
 @media (max-width: 400px) {
     .carousel{
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }
+
+@media (max-width: 768px) {
+    .carousel{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
 .carousel-container {
     margin-right: 30px; 
     margin-left: 30px; 
 }
 
-/* about let */
-@media (max-width: 576px) {
-    .about-text {
-        padding-left: 30px;
-        padding-right: 30px;
-        
-    }
-  
-}
+
 
 @media (max-width: 576px) {
     .footer{
@@ -178,6 +152,29 @@ body {
         
     }
 }
+
+@media (max-width: 576px) {
+    .why-matters, .what-we-do, .vision-mission{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-let{
+        padding-left: 5px;
+        padding-right: 30px;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .welcome{
+        padding-left: 5px;
+        padding-right: 30px;
+    }
+}
+
 
 /* tablet view */
 
