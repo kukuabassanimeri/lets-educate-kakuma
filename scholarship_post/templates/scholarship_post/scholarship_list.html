@@ -43,10 +43,10 @@
         <div class="col-md-6">
             <div class="scholarship-card bg-white shadow-lg mt-3 p-3 rounded">
                 <h2 class="fs-5 text-primary">{{ scholarship.title }}</h2>
-                <p>{{ scholarship.content|truncatewords:20 }}</p>
+                <p>{{ scholarship.content|linebreaks|truncatewords:20 }}</p>
                 <a href="{% url 'scholarship_post:scholarship-detail' scholarship.pk %}" class="readmore mb-2">Read
                     More</a>
-                <p><span class="text-primary">Eligibility Criteria</span> <br>{{ scholarship.eligibility_criteria }}
+                <p><span class="text-primary">Eligibility Criteria</span> <br>{{ scholarship.eligibility_criteria|linebreaks }}</p>
                 </p>
                 <p><span class="text-primary">Deadline</span><br>{{ scholarship.dead_line }}</p>
                 <a href="{{ scholarship.link }}" class="readmore">Apply Here</a>

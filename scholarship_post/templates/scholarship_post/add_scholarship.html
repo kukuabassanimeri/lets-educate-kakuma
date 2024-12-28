@@ -21,12 +21,14 @@
 
                 <div class="mb-3">
                     <label for="id_content" class="form-label text-primary">Content</label>
-                    {{ s_form.content }}
+                    <!-- {{ s_form.content }} -->
+                    <textarea name="content" id="id_content" class="form-control" rows="5">{{ s_form.content.value|default_if_none:'' }}</textarea>
                 </div>
 
                 <div class="mb-3">
                     <label for="id_eligibility_criteria" class="form-label text-primary">Eligibility Criteria</label>
-                    {{ s_form.eligibility_criteria }}
+                    <!-- {{ s_form.eligibility_criteria }} -->
+                    <textarea name="eligibility_criteria" id="id_eligibility_criteria" class="form-control" rows="5">{{ s_form.eligibility_criteria.value|default_if_none:'' }}</textarea>
                 </div>
 
                 <div class="mb-3">
