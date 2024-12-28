@@ -20,10 +20,10 @@
 
     <div class="col-md-6 bg-white shadow-lg p-4 rounded">
         <h1 class="fs-5 text-primary">{{ scholarship.title }}</h1>
-        <p>{{ scholarship.content }}</p>
-        <p> <span class="text-primary">Eligibility Criteria </span><br>{{ scholarship.eligibility_criteria }}</p>
+        <p>{{ scholarship.content|linebreaks }}</p>
+        <p> <span class="text-primary">Eligibility Criteria </span><br>{{ scholarship.eligibility_criteria|linenumbers|linebreaks }}</p>
         <p><span class="text-primary">Deadline</span> - {{ scholarship.dead_line }}</p>
-        <p>Link <a href="{{ scholarship.link }}" class="text-decoration-none"> <br>{{ scholarship.link }}</a></p>
+        <p>Link <a href="{{ scholarship.link }}" target="_blank" class="text-decoration-none"> <br>{{ scholarship.link }}</a></p>
         <p> <span class="text-primary">Posted on</span> - {{ scholarship.created_at }}</p>
         <p><span class="text-primary">Posted By </span>- {{ scholarship.created_by.username }}</p>
 
