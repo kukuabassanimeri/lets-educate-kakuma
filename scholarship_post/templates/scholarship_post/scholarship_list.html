@@ -49,7 +49,7 @@
                 <p><span class="text-primary">Eligibility Criteria</span> <br>{{ scholarship.eligibility_criteria|linenumbers|linebreaks }}</p>
                 </p>
                 <p><span class="text-primary">Deadline</span><br>{{ scholarship.dead_line }}</p>
-                <a href="{{ scholarship.link }}" class="readmore">Apply Here</a>
+                <a href="{{ scholarship.link }}"  target="_blank" class="readmore">Apply Here</a>
                 <p class="username fs-6">Posted by {{ scholarship.created_by.username }} on {{ scholarship.created_at }}
                 </p>
             </div>
