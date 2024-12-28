@@ -135,7 +135,7 @@ body {
 @media (max-width: 576px) {
     .carousel-item img{
         width: 100%;
-        height: 30vh;
+        height: 20vh;
         margin: 10px auto;
         
     }
@@ -144,11 +144,29 @@ body {
         margin-right: 10px; 
         margin-left: 10px; 
     }
+
+    
 }
 
+@media (max-width: 400px) {
+    .carousel{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
 .carousel-container {
     margin-right: 30px; 
     margin-left: 30px; 
+}
+
+/* about let */
+@media (max-width: 576px) {
+    .about-text {
+        padding-left: 30px;
+        padding-right: 30px;
+        
+    }
+  
 }
 
 @media (max-width: 576px) {
@@ -163,7 +181,7 @@ body {
 
 /* tablet view */
 
-@media (min-width: 577px) and (max-width: 768px) {
+@media (max-width: 768px) {
     .missionvision {
         margin: 15px;
         gap: 20px;
@@ -172,7 +190,7 @@ body {
 }
 
 
-@media (min-width: 577px) and (max-width: 768px) {
+@media (max-width: 768px) {
     .nav-hover:hover {
         background-color: transparent; 
         transform: none; 
@@ -186,7 +204,7 @@ body {
 }
 
 
-@media (min-width: 640px) {
+@media (max-width: 768px) {
     .text {
         padding-left: 30px;
         padding-right: 30px;
@@ -194,7 +212,7 @@ body {
     }
 }
 
-@media (min-width: 640px) {
+@media (max-width: 768px) {
     .welcome{
         padding-left: 20px;
         padding-right: 30px;
