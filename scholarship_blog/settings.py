@@ -152,3 +152,4 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 PASSWORD_RESET_TIMEOUT = 1800 
+DEFAULT_FROM_EMAIL = f"scholarship_post<{os.environ.get('EMAIL_USER')}>"
