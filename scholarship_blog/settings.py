@@ -152,5 +152,5 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = config("EMAIL_USER")
 EMAIL_HOST_PASSWORD = config("EMAIL_PASS")
 PASSWORD_RESET_TIMEOUT = 1800 
-DEFAULT_FROM_EMAIL = f'scholarship_post <{EMAIL_HOST_USER}>'
+DEFAULT_FROM_EMAIL = 'scholarship_post <no-reply@letseducatekakuma.com>'
 
