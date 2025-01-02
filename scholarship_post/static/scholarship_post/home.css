@@ -145,8 +145,8 @@ body {
 
 @media (max-width: 576px) {
     .footer{
-      padding-left: 30px;
-      padding-right: 30px;
+      padding-left: 15px;
+      padding-right: 15px;
       
     
         
@@ -162,8 +162,8 @@ body {
 
 @media (max-width: 576px) {
     .why-matters{
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
 
