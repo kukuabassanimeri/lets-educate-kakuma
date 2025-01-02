@@ -238,3 +238,10 @@ body {
     }
 }
 
+/*SDGs We address */
+@media (max-width: 576px) {
+    .sdg-we-address{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
