@@ -161,6 +161,13 @@ body {
 }
 
 @media (max-width: 576px) {
+    .why-matters{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 576px) {
     .about-let{
         padding-left: 5px;
         padding-right: 30px;
