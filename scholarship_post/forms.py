@@ -60,8 +60,8 @@ class ContactForm(forms.ModelForm):
         model = ContactUs
         fields = ['name', 'phone_number', 'message']
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Your Name'}),
-            'phone_number': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Enter Your Phone Number'}),
-            'message': forms.Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': 'Input Message Here'}),
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'phone_number': forms.NumberInput(attrs={'class': 'form-control'}),
+            'message': forms.Textarea(attrs={'class': 'form-control', 'rows': '3'}),
         }
 
