@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
-from .forms import ScholarshipUserCreationForm, ScholarshipUserLoginForm, ScholarshipPostModelForm
+from .forms import ScholarshipUserCreationForm, ScholarshipUserLoginForm, ScholarshipPostModelForm, ContactForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import ScholarshipPost
+from .models import ScholarshipPost, ContactUs
 from django.shortcuts import get_object_or_404
 
 # Create your views here.
@@ -105,3 +105,16 @@ def update_scholarship(request, pk):
     else:
         u_form = ScholarshipPostModelForm(instance=scholarship)
     return render(request, 'scholarship_post/update_scholarship.html', {'u_form': u_form, 'scholarship': scholarship})
+
+#Scholarship Post Contact Us view
+def ContactUsView(request):
+    if request.method == 'POST':
+        contact_form = ContactForm(request.POST)
+        if contact_form.is_valid():
+            contact_form.save()
+            messages.success(request, "Enquires Successfully Received!")
+            return redirect('scholarship_post:contact-us')
+    else:
+        contact_form = ContactForm()
+    return render(request, 'scholarship_post/contact_us.html', {'contact_form': contact_form})
+    

@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import ScholarshipPost
+from .models import ScholarshipPost, ContactUs
 
 #Scholarship_blog user creation form
 class ScholarshipUserCreationForm(UserCreationForm):
@@ -54,4 +54,14 @@ class ScholarshipPostModelForm(forms.ModelForm):
             'created_at': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
         }
         
-     
+#scholarship_blog form contact us
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = ContactUs
+        fields = ['name', 'phone_number', 'message']
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Your Name'}),
+            'phone_number': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Enter Your Phone Number'}),
+            'message': forms.Textarea(attrs={'class': 'form-control', 'rows': '3', 'placeholder': 'Input Message Here'}),
+        }
+

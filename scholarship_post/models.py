@@ -16,3 +16,12 @@ class ScholarshipPost(models.Model):
     
     def __str__(self):
         return self.title
+    
+#scholarship_blog model contact us
+class ContactUs(models.Model):
+    name = models.CharField(max_length=100)
+    phone_number = models.IntegerField()
+    message = models.TextField()
+    
+    def __str__(self):
+        return self.name
