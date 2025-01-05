@@ -8,10 +8,10 @@
 {% block content %}
 <div class="row mt-4 scholarship-detail">
     {% if not user.is_staff and not user.is_superuser %}
-    <p class="text-start text-md-center fs-4 text-primary fw-semibold">Submit Your Application</p>
+    <p class="text-start text-md-center fs-4 text-primary">Submit Your Application</p>
 
     {% else %}
-    <p class="text-start text-md-center fs-4 text-primary fw-semibold">Update or Delete Scholarship</p>
+    <p class="text-start text-md-center fs-4 text-primary">Update or Delete Scholarship</p>
     {% endif %}
 
     <div class="col-md-3">
