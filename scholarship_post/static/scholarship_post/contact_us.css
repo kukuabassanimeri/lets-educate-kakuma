@@ -12,6 +12,7 @@ body{
 /* phone view */
 @media (max-width: 576px) {
     .contact-us{
+        padding-top: 50px;
         margin: 15px;
     }
 }
