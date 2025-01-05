@@ -112,7 +112,7 @@ def ContactUsView(request):
         contact_form = ContactForm(request.POST)
         if contact_form.is_valid():
             contact_form.save()
-            messages.success(request, "Enquires Successfully Received!")
+            messages.success(request, "Message Successfully Received!")
             return redirect('scholarship_post:contact-us')
     else:
         contact_form = ContactForm()
