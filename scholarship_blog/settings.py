@@ -30,6 +30,7 @@ SECRET_KEY = config("SECRET_KEY")
 DEBUG = config("DEBUG", cast=bool)
 
 #ALLOWED_HOSTS = ['lets-educate-kakuma.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['camp2campus.onrender.com', 'localhost', '127.0.0.1']
 ALLOWED_HOSTS = config("ALLOWED_HOSTS").split(",")
 
 
