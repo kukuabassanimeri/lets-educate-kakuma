@@ -1,0 +1,19 @@
+{% extends 'scholarship_post/index.html'%}
+{% load static %}
+
+{% block css%}
+<link rel="stylesheet" href="{% static 'scholarship_post/impact.css' %}">
+{% endblock css%}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="text-center bg-primary-subtle w-25 rounded-1 p-5">
+        <h5>Page coming sooner!</h5>
+
+        <div class="text-center d-block">
+        <a href="{% url 'scholarship_post:home' %}" class="text-decoration-none">Back Home</a>
+    </div>
+    </div>
+</div>
+
+{% endblock content %}

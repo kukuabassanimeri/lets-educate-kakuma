@@ -117,4 +117,7 @@ def ContactUsView(request):
     else:
         contact_form = ContactForm()
     return render(request, 'scholarship_post/contact_us.html', {'contact_form': contact_form})
-    
+
+# Impact view
+def impact(request):
+    return render(request, 'scholarship_post/impact.html')

@@ -17,5 +17,6 @@ urlpatterns = [
     path('scholarship_detail/<int:pk>/', views.scholarship_detail, name='scholarship-detail'),
     path('scholarship_update/update/<int:pk>/', views.update_scholarship, name='update-scholarship'),
     path('Contact-us/', views.ContactUsView, name='contact-us'),
+    path('impact/', views.impact, name='impact'),
 
 ]
