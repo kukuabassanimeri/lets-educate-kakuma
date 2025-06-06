@@ -97,12 +97,15 @@
 
 
 <div class="container text-start text-md-center mt-4 ">
-    <p class="username mt-2 welcome">Hello {{ user.username }}
-        <i class="fa-regular fa-hand text-warning fs-4"></i>
-    </p>
-    <h1 class="fs-4 text-primary welcome">Welcome to Camp2Campus<br>
-        <span class="fs-6 username">Scholarship Opportunity Hub</span>
-    </h1>
+    {% if user.is or user.is_superuser %}
+        <p class="username mt-2 welcome">Hello {{ user.username }}
+            <i class="fa-regular fa-hand text-warning fs-4"></i>
+        </p>
+    {% else %}
+        <h1 class="fs-4 text-primary welcome">Welcome to Camp2Campus<br>
+            <span class="fs-6 username">Scholarship Opportunity Hub</span>
+        </h1>
+    {% endif %}
 </div>
 
 <!-- About Let -->
