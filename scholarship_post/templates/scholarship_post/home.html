@@ -9,8 +9,7 @@
 
 <!--Navbar starts-->
 <header>
-    <nav
-        class="navbar navbar-expand-lg {% if user.is_staff or user.is_superuser %}bg-secondary{% else %}bg-primary{% endif %}">
+    <nav class="navbar navbar-expand-lg bg-secondary">
         <div class="container-fluid">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -28,23 +27,17 @@
                         <a class="nav-link nav-hover" href="#about">About</a>
                     </li>
                     <li class="nav-item mx-3">
-                        {% if user.is_staff or user.is_superuser %}
-                        <a class="nav-link nav-hover" href="{% url 'scholarship_post:add-scholarship' %}">
-                            Add
-                        </a>
-                        {% endif %}
-                    </li>
-                    <li class="nav-item mx-3">
-                        <a class="nav-link nav-hover" href="{% url 'scholarship_post:scholarship-blog-list' %}">Scholarships</a>
-                    </li>
-                    <li class="nav-item mx-3">
                         <a class="nav-link nav-hover" href="{% url 'scholarship_post:impact' %}">Impact</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                        <a class="nav-link nav-hover"
+                            href="{% url 'scholarship_post:scholarship-blog-list' %}">Scholarship</a>
                     </li>
                     <li class="nav-item mx-3">
                         <a class="nav-link nav-hover" href="{% url 'scholarship_post:contact-us' %}">Contact Us</a>
                     </li>
                     <li class="nav-item mx-3">
-                        <a class="nav-link nav-hover" href="{% url 'scholarship_post:user-logout' %}">Logout</a>
+                        <a class="nav-link nav-hover" href="{% url 'scholarship_post:user-login' %}">Admin</a>
                     </li>
                 </ul>
             </div>
@@ -56,7 +49,8 @@
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-12 col-md-10">
-            <div id="carouselExampleIndicators" class="carousel slide carousel-fade">
+            <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                data-bs-interval="3000">
                 <!-- Indicators -->
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
@@ -133,7 +127,6 @@
     </div>
 </div>
 
-
 <!-- Mission and Vision -->
 <div class="container mt-3 vision-mission">
     <div class="row justify-content-center">
@@ -144,7 +137,8 @@
                     <div class="bg-white shadow-lg p-4 rounded w-100 d-flex flex-column text-start text-md-center">
                         <h5 class="fs-5 text-primary">Our Mission</h5>
                         <p>
-                            To increase access to university education for refugees in Kakuma by looking for scholarship opportunities and providing technical application support
+                            To increase access to university education for refugees in Kakuma by looking for scholarship
+                            opportunities and providing technical application support
                         </p>
                     </div>
                 </div>
@@ -164,7 +158,6 @@
         </div>
     </div>
 </div>
-
 
 <!-- What We Do -->
 <div class="container mt-3 what-we-do">
@@ -209,7 +202,7 @@
                     <div class="bg-white shadow-lg p-4 rounded w-100 d-flex flex-column text-start text-md-center">
                         <h5 class="fs-5 text-primary">Notification Alerts</h5>
                         <p>
-                           Applicants are notified on the scholarship due deadlines.
+                            Applicants are notified on the scholarship due deadlines.
                         </p>
                     </div>
                 </div>
@@ -224,7 +217,9 @@
         <div class="col-12 col-md-10">
             <h5 class="fs-4 text-primary text-start text-md-center mt-5">Why It Matters</h5>
             <p class="text-start text-md-center">
-                Higher education makes it possible for thousands of refugee youth to develop skills and earn qualifications to allow them to become change-makers who can take the lead in identifying solutions to the challenges that affect them and their communities.
+                Higher education makes it possible for thousands of refugee youth to develop skills and earn
+                qualifications to allow them to become change-makers who can take the lead in identifying solutions to
+                the challenges that affect them and their communities.
 
                 <br>
                 We aim to address
@@ -235,7 +230,8 @@
                     <div class="bg-white shadow-lg p-4 rounded w-100 d-flex flex-column text-start text-md-center">
                         <h5 class="fs-5 text-primary">SDG 4</h5>
                         <p>
-                            Ensuring inclusive and equitable quality education and promoting lifelong learning opportunities for all.
+                            Ensuring inclusive and equitable quality education and promoting lifelong learning
+                            opportunities for all.
                         </p>
                     </div>
                 </div>
@@ -244,16 +240,17 @@
                     <div class="bg-white shadow-lg p-4 rounded w-100 d-flex flex-column text-start text-md-center">
                         <h5 class="fs-5 text-primary">Goal 4.3</h5>
                         <p>
-                           Equal access to affordable, technical and higher education.
+                            Equal access to affordable, technical and higher education.
                         </p>
                     </div>
                 </div>
                 <!-- Smart Categorization -->
                 <div class="col-12 col-md-4 d-flex">
                     <div class="bg-white shadow-lg p-4 rounded w-100 d-flex flex-column text-start text-md-center">
-                        <h5 class="fs-5 text-primary">Gaol 4.9</h5>
+                        <h5 class="fs-5 text-primary">Goal 4.9</h5>
                         <p>
-                            Expand higher education scholarship for developing countries in particular less developed countries.
+                            Expand higher education scholarship for developing countries in particular less developed
+                            countries.
                         </p>
                     </div>
                 </div>
@@ -262,13 +259,11 @@
     </div>
 </div>
 
-
-
 <div class="footer">
-    <footer
-        class="text-center text-white {% if user.is_staff or user.is_superuser %}bg-secondary{% else %}bg-primary{% endif %} mt-5 p-3">
+    <footer class="text-center text-white bg-secondary mt-5 p-3">
         <p class="pt-2">&copy; 2024 Camp2Campus | All Rights Reserved</p>
     </footer>
 
 </div>
+
 {% endblock content %}

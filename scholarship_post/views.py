@@ -31,7 +31,7 @@ def user_login_view(request):
 
             if user is not None:
                 login(request, user) 
-                return redirect('scholarship_post:home')
+                return redirect('scholarship_post:admin-dashboard')
             else:
                 messages.error(request, 'Invalid username or password.')
     else:
@@ -40,14 +40,13 @@ def user_login_view(request):
     return render(request, 'registration/login.html', {'log_form': log_form})
 
 #scholarship_post user home view
-@login_required
 def home(request):
     return render(request, 'scholarship_post/home.html')
 
 #scholarship_post user logout view
 def user_logout_view(request):
     logout(request) 
-    return redirect('scholarship_post:user-login') 
+    return redirect('scholarship_post:home') 
 
 #scholarship_blog scholarship lists view
 def scholarships_blog_list(request):
@@ -121,3 +120,8 @@ def ContactUsView(request):
 # Impact view
 def impact(request):
     return render(request, 'scholarship_post/impact.html')
+
+# ADMIN DASHBOARD
+@login_required
+def admin_dashboard(request):
+    return render(request, 'scholarship_post/admin_dashboard.html')

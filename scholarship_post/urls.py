@@ -6,8 +6,8 @@ app_name = 'scholarship_post'
 
 urlpatterns = [
     path('user_registration/', views.user_registration, name='user-registration'),
-    path('', views.user_login_view, name='user-login'),
-    path('home/', views.home, name='home'),
+    path('login/', views.user_login_view, name='user-login'),
+    path('', views.home, name='home'),
     path('user_logout_view/', views.user_logout_view, name='user-logout'),
     
     path('scholarships_blog_list/', views.scholarships_blog_list, name='scholarship-blog-list'),
@@ -18,5 +18,6 @@ urlpatterns = [
     path('scholarship_update/update/<int:pk>/', views.update_scholarship, name='update-scholarship'),
     path('Contact-us/', views.ContactUsView, name='contact-us'),
     path('impact/', views.impact, name='impact'),
+    path('admin_dashboard/', views.admin_dashboard, name='admin-dashboard'),
 
 ]
