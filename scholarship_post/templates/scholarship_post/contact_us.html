@@ -1,34 +1,30 @@
 {% extends 'scholarship_post/index.html'%}
 {% load static %}
 
-{% block css%}
+{% block css %}
 <link rel="stylesheet" href="{% static 'scholarship_post/contact_us.css' %}">
-{% endblock css%}
+{% endblock css %}
 
 {% block content %}
 <div class="container mt-5">
     <div class="row justify-content-center contact-us">
-        <div class="col-md-8 col-lg-6 form-container col-lg-5 shadow-lg p-4 bg-white rounded">
-            <p class="form-header fs-5 text-primary text-center"> Contact Us </p>
+        <div class="col-md-8 col-lg-5 shadow-sm p-4 rounded ourcontact">
+            <p class="form-header fs-5 text-primary fw-bold text-center mb-3">Contact Us</p>
 
             {% for message in messages %}
-            {% if message %}
-            <div class="{{ message.tags }} text-success text-center mt-2">
-                {{ message }}
-            </div>
-            {% endif %}
+                {% if message %}
+                    <div class="{{ message.tags }} text-success text-center mt-2">
+                        {{ message }}
+                    </div>
+                {% endif %}
             {% endfor %}
 
             <form method="POST">
                 {% csrf_token %}
                 {{ contact_form.as_p }}
 
-                <button type="submit" class="btn btn-success w-100 mb-3">Submit</button>
-                <div class="text-center">
-                    <a href="{% url 'scholarship_post:home' %}" class="text-decoration-none">Back</a>
-                </div>
+                <button type="submit" class="btn btn-primary w-100 mb-3">Submit</button>
             </form>
-
         </div>
     </div>
 </div>

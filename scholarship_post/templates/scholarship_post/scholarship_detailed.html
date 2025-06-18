@@ -1,50 +1,50 @@
 {% extends 'scholarship_post/index.html'%}
 {% load static %}
 
-{% block css%}
+{% block css %}
 <link rel="stylesheet" href="{% static 'scholarship_post/scholarship_detail.css' %}">
-{% endblock css%}
+{% endblock css %}
 
 {% block content %}
-<div class="row mt-4 scholarship-detail">
-    {% if not user.is_staff and not user.is_superuser %}
-    <p class="text-start text-md-center fs-4 text-primary">Submit Your Application</p>
+<div class="row mt-4 scholarship-detail justify-content-center">
+    <div class="col-md-5 shadow-sm p-4 rounded" style="background-color: #f9fbfd;">
+        
+        {% if not user.is_staff and not user.is_superuser %}
+            <p class="text-start fs-5 text-dark fw-bold mb-4">Submit Your Application</p>
+        {% else %}
+            <p class="text-start fs-5 text-dark fw-bold mb-4">Update or Delete Scholarship</p>
+        {% endif %}
 
-    {% else %}
-    <p class="text-start text-md-center fs-4 text-primary">Update or Delete Scholarship</p>
-    {% endif %}
-
-    <div class="col-md-3">
-
-    </div>
-
-    <div class="col-md-6 bg-white shadow-lg p-4 rounded">
-        <h1 class="fs-5 text-primary">{{ scholarship.title }}</h1>
-        <p>{{ scholarship.content|linebreaks }}</p>
-        <p> <span class="text-primary">Eligibility Criteria </span><br>{{ scholarship.eligibility_criteria|linenumbers|linebreaks }}</p>
-        <p><span class="text-primary">Deadline</span> - {{ scholarship.dead_line }}</p>
-        <p>Link <a href="{{ scholarship.link }}" target="_blank" class="text-decoration-none"> <br>{{ scholarship.link|slice:":30" }}{% if scholarship.link|length > 30 %}...{% endif %}</a></p>
-        <p> <span class="text-primary">Posted on</span> - {{ scholarship.created_at }}</p>
-        <p><span class="text-primary">Posted By </span>- {{ scholarship.created_by.username }}</p>
-
+        <h1 class="fs-5 text-dark fw-bold mb-3">{{ scholarship.title }}</h1>
+        <p class="text-dark">{{ scholarship.content|linebreaks }}</p>
+        
+        <p class="text-dark mb-3">
+            <span class="text-dark fw-semibold">Eligibility Criteria:</span><br>
+            {{ scholarship.eligibility_criteria|linenumbers|linebreaks }}
+        </p>
+        
+        <p class="text-dark mb-2">
+            <span class="text-dark fw-semibold">Deadline:</span> {{ scholarship.dead_line }}
+        </p>
+        
+        <p class="text-dark mb-2">
+            <span class="text-dark fw-semibold">Link:</span><br>
+            <a href="{{ scholarship.link }}" target="_blank" class="text-decoration-none text-primary">
+                {{ scholarship.link|slice:":30" }}{% if scholarship.link|length > 30 %}...{% endif %}
+            </a>
+        </p>
+        
+        <p class="text-dark mb-2"><span class="text-dark fw-semibold">Posted on:</span> {{ scholarship.created_at }}</p>
+        <p class="text-dark mb-3"><span class="text-dark fw-semibold">Posted By:</span> {{ scholarship.created_by.username }}</p>
 
         <div class="text-center">
-            <a href="{% url 'scholarship_post:scholarship-blog-list' %}"
-                class="text-decoration-none btn btn-secondary btn-sm mx-1">Back</a>
+            <a href="{% url 'scholarship_post:scholarship-blog-list' %}" class="btn btn-primary btn-sm mx-1 w-100">Back</a>
 
             {% if user.is_staff or user.is_superuser %}
-            <a href="{% url 'scholarship_post:update-scholarship' scholarship.pk %}"
-                class="text-decoration-none btn btn-primary btn-sm mx-1">Update</a>
-            <a href="{% url 'scholarship_post:delete-scholarship' scholarship.pk %}"
-                class="text-decoration-none btn btn-danger btn-sm mx-1">Delete</a>
+                <a href="{% url 'scholarship_post:update-scholarship' scholarship.pk %}" class="btn btn-primary btn-sm mx-1">Update</a>
+                <a href="{% url 'scholarship_post:delete-scholarship' scholarship.pk %}" class="btn btn-danger btn-sm mx-1">Delete</a>
             {% endif %}
         </div>
     </div>
-
-    <div class="col-md-3">
-
-    </div>
-
 </div>
-
 {% endblock content %}

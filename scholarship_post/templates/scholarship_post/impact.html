@@ -6,14 +6,24 @@
 {% endblock css%}
 
 {% block content %}
-<div class="d-flex justify-content-center align-items-center min-vh-100">
-    <div class="text-center bg-primary-subtle w-25 rounded-1 p-5">
-        <h5>Page coming sooner!</h5>
+    <!--ADD IMPACT-->
+    <div class="container">
+        <h5>Our Impact Stories</h5>
+         {% for message in messages %}
+            {% if message %}
+            <div class="{{ message.tags }} text-success text-center mt-2">
+                {{ message }}
+            </div>
+            {% endif %}
+            {% endfor %}
 
-        <div class="text-center d-block">
-        <a href="{% url 'scholarship_post:home' %}" class="text-decoration-none">Back Home</a>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ impact_form.as_p }}
+             <button type="submit">Submit</button>
+
+        </form>
+
     </div>
-    </div>
-</div>
 
 {% endblock content %}

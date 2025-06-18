@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
-from .forms import ScholarshipUserCreationForm, ScholarshipUserLoginForm, ScholarshipPostModelForm, ContactForm
+from .forms import ScholarshipUserCreationForm, ScholarshipUserLoginForm, ScholarshipPostModelForm, ContactForm, OurImpactForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import ScholarshipPost, ContactUs
+from .models import ScholarshipPost, ContactUs, OurImpact
 from django.shortcuts import get_object_or_404
 
 # Create your views here.
@@ -117,11 +117,25 @@ def ContactUsView(request):
         contact_form = ContactForm()
     return render(request, 'scholarship_post/contact_us.html', {'contact_form': contact_form})
 
-# Impact view
-def impact(request):
-    return render(request, 'scholarship_post/impact.html')
-
 # ADMIN DASHBOARD
 @login_required
 def admin_dashboard(request):
     return render(request, 'scholarship_post/admin_dashboard.html')
+
+# Impact view
+def impact(request):
+    if request.method == 'POST':
+        impact_form = OurImpactForm(request.POST, request.FILES)
+        if impact_form.is_valid():
+            print(impact_form.cleaned_data['userImage'])
+            impact_form.save()
+            messages.success(request, "Impact added successfully")
+            return redirect('scholarship_post:impact')
+    else:
+        impact_form = OurImpactForm()
+    return render(request, 'scholarship_post/impact.html', {'impact_form': impact_form})
+
+#RENDER OUR IMPACT
+def our_impact(request):
+    impacts = OurImpact.objects.all().order_by('-created_at')
+    return render(request, 'scholarship_post/our_impact.html', {'impacts': impacts})

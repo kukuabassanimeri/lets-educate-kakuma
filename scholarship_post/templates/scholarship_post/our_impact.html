@@ -1,0 +1,38 @@
+{% extends 'scholarship_post/index.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'scholarship_post/our-impact.css' %}">
+
+{% endblock css %}
+
+{% block content %}
+<div class="container my-4">
+    <h5 class="text-center fs-5 fw-bold text-primary mb-4">Our Impact Stories</h5>
+
+    <div class="row g-4 justify-content-center">
+        {% for impact in impacts %}
+        <div class="col-md-6 col-lg-4">
+            <div class="impact-card text-center">
+                {% if impact.userImage.name != "default.jpg" %}
+                <img src="{{ impact.userImage.url }}" alt="{{ impact.userName }}">
+                {% else %}
+                <img src="{% static 'scholarship_post/cheni.jpg' %}" alt="No Image Found">
+                {% endif %}
+
+                <ul class="list-unstyled text-dark">
+                    <li><strong>Name:</strong> {{ impact.userName }}</li>
+                    <li><strong>Scholarship:</strong> {{ impact.scholarshipName }}</li>
+                    <li><strong>Institution:</strong> {{ impact.universityName }}</li>
+                    <li><strong>Program of Study:</strong> {{ impact.studyProgram }}</li>
+                </ul>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12 text-center text-muted">
+            <p>No impact stories available at the moment.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

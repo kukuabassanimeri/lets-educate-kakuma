@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import ScholarshipPost, ContactUs
+from .models import ScholarshipPost, ContactUs, OurImpact
 
 #Scholarship_blog user creation form
 class ScholarshipUserCreationForm(UserCreationForm):
@@ -65,3 +65,18 @@ class ContactForm(forms.ModelForm):
             'message': forms.Textarea(attrs={'class': 'form-control', 'rows': '3'}),
         }
 
+#scholarship_blog form impact
+class OurImpactForm(forms.ModelForm):
+    class Meta:
+        model = OurImpact
+        fields = ['userImage', 'userName', 'scholarshipName', 'universityName', 'studyProgram']
+        widgets = {
+            'userImage': forms.ClearableFileInput(attrs={
+                'class': 'form-control',
+                'accept': 'images/*',
+                }),
+            'userName': forms.TextInput(attrs={'class': 'form-control'}),
+            'scholarshipName': forms.TextInput(attrs={'class': 'form-control'}),
+            'universityName': forms.TextInput(attrs={'class': 'form-control'}),
+            'studyProgram': forms.TextInput(attrs={'class': 'form-control'}),
+        }

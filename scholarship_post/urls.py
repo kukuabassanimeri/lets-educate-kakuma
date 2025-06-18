@@ -19,5 +19,6 @@ urlpatterns = [
     path('Contact-us/', views.ContactUsView, name='contact-us'),
     path('impact/', views.impact, name='impact'),
     path('admin_dashboard/', views.admin_dashboard, name='admin-dashboard'),
+    path('our_impact/', views.our_impact, name='our-impact'),
 
 ]
