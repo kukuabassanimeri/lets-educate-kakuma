@@ -8,6 +8,9 @@ body{
     overflow-x: hidden;
     background-color: #f8f9fa; 
 }
+.scholarhsip{
+    background-color: #f8f9fa;
+}
 
 /* phone view */
 @media (max-width: 576px) {

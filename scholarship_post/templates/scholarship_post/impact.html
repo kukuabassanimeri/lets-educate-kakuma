@@ -1,29 +1,27 @@
 {% extends 'scholarship_post/index.html'%}
 {% load static %}
 
-{% block css%}
+{% block css %}
 <link rel="stylesheet" href="{% static 'scholarship_post/impact.css' %}">
-{% endblock css%}
+{% endblock css %}
 
 {% block content %}
-    <!--ADD IMPACT-->
-    <div class="container">
-        <h5>Our Impact Stories</h5>
-         {% for message in messages %}
-            {% if message %}
-            <div class="{{ message.tags }} text-success text-center mt-2">
-                {{ message }}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="p-4 shadow-lg rounded impact">
+                <h5 class="text-start text-primary fw-bold mb-4">Share Your Impact Story</h5>
+
+                <form method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+                    {% csrf_token %}
+                    {{ impact_form.as_p }}
+
+                    <div class="d-grid mt-3">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
             </div>
-            {% endif %}
-            {% endfor %}
-
-        <form method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ impact_form.as_p }}
-             <button type="submit">Submit</button>
-
-        </form>
-
+        </div>
     </div>
-
+</div>
 {% endblock content %}

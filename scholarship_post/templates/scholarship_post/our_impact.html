@@ -10,6 +10,13 @@
 <div class="container my-4">
     <h5 class="text-center fs-5 fw-bold text-primary mb-4">Our Impact Stories</h5>
 
+     {% for message in messages %}
+        {% if message %}
+            <div class="{{ message.tags }} text-success text-center mb-3">
+                {{ message }}
+            </div>
+            {% endif %}
+    {% endfor %}
     <div class="row g-4 justify-content-center">
         {% for impact in impacts %}
         <div class="col-md-6 col-lg-4">

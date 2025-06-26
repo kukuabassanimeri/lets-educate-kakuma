@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import ScholarshipPost, ContactUs, OurImpact
 from django.shortcuts import get_object_or_404
+from django.utils import timezone
 
 # Create your views here.
 
@@ -50,6 +51,10 @@ def user_logout_view(request):
 
 #scholarship_blog scholarship lists view
 def scholarships_blog_list(request):
+    # Delete expired scholarships
+    ScholarshipPost.objects.filter(dead_line__lt=timezone.now()).delete()
+    
+    # Fetch remaining valid scholarships
     scholarships = ScholarshipPost.objects.all().order_by('-created_at')
     return render(request,'scholarship_post/scholarship_list.html', {'scholarships': scholarships})
 
@@ -130,7 +135,7 @@ def impact(request):
             print(impact_form.cleaned_data['userImage'])
             impact_form.save()
             messages.success(request, "Impact added successfully")
-            return redirect('scholarship_post:impact')
+            return redirect('scholarship_post:our-impact')
     else:
         impact_form = OurImpactForm()
     return render(request, 'scholarship_post/impact.html', {'impact_form': impact_form})
