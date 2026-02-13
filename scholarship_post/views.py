@@ -60,6 +60,7 @@ def user_logout_view(request):
 
 #scholarship_blog scholarship lists view
 def scholarships_blog_list(request):
+    
     # Delete expired scholarships
     ScholarshipPost.objects.filter(dead_line__lt=timezone.now()).delete()
     
@@ -67,7 +68,7 @@ def scholarships_blog_list(request):
     scholarships = ScholarshipPost.objects.all().order_by('-created_at')
     return render(request,'scholarship_post/scholarship_list.html', {'scholarships': scholarships})
 
-#scholarship_blog post view
+# Add scholarship_blog post
 def add_scholarship(request):
     if request.method == 'POST':
         s_form = ScholarshipPostModelForm(request.POST)
@@ -95,8 +96,7 @@ def delete_scholarship(request, pk):
 
     return render(request, 'scholarship_post/confirm_delete_post.html', {'scholarship': scholarship})
 
-
-#scholarship_post detailed view
+# scholarship_post detailed view
 def scholarship_detail(request, pk):
     scholarship = get_object_or_404(ScholarshipPost, pk=pk)
     return render(request, 'scholarship_post/scholarship_detailed.html', {'scholarship': scholarship})

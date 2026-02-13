@@ -61,7 +61,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'scholarship_blog.wsgi.application'
 
-
 # Database
 DATABASES = {
     'default': {
@@ -87,7 +86,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 LANGUAGE_CODE = 'en-us'
 
@@ -96,7 +94,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
@@ -115,7 +112,6 @@ MEDIA_URL = '/media/'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 LOGIN_REDIRECT_URL = 'scholarship_post:user-login'
 LOGIN_URL = 'scholarship_post:user-login'
