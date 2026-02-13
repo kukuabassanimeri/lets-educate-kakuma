@@ -29,6 +29,7 @@ class ScholarshipUserCreationForm(UserCreationForm):
             'class': 'form-control',
             'placeholder': 'Confirm your password',
         })
+
 #Scholarship_blog user login form
 class ScholarshipUserLoginForm(forms.Form):
     username = forms.CharField(

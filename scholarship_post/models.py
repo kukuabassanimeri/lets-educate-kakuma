@@ -3,8 +3,6 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from PIL import Image
 
-# Create your models here.
-
 #scholarship_blog model post
 class ScholarshipPost(models.Model):
     title = models.CharField(max_length=100)

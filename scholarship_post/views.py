@@ -7,8 +7,6 @@ from .models import ScholarshipPost, ContactUs, OurImpact
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
 
-# Create your views here.
-
 #scholarship_blog user creation view
 def user_registration(request):
     if request.method == 'POST':
@@ -42,8 +40,19 @@ def user_login_view(request):
 
 #scholarship_post user home view
 def home(request):
-    return render(request, 'scholarship_post/home.html')
+    if request.method == 'POST':
+        contact_form = ContactForm(request.POST)
+        if contact_form.is_valid():
+            contact_form.save()
+            messages.success(request, "Message Successfully Received!")
+            return redirect('scholarship_post:home')  # redirect to avoid form resubmission
+    else:
+        contact_form = ContactForm()
 
+    return render(request, 'scholarship_post/home.html', {
+        'contact_form': contact_form
+    })
+    
 #scholarship_post user logout view
 def user_logout_view(request):
     logout(request) 
@@ -109,18 +118,6 @@ def update_scholarship(request, pk):
     else:
         u_form = ScholarshipPostModelForm(instance=scholarship)
     return render(request, 'scholarship_post/update_scholarship.html', {'u_form': u_form, 'scholarship': scholarship})
-
-#Scholarship Post Contact Us view
-def ContactUsView(request):
-    if request.method == 'POST':
-        contact_form = ContactForm(request.POST)
-        if contact_form.is_valid():
-            contact_form.save()
-            messages.success(request, "Message Successfully Received!")
-            return redirect('scholarship_post:contact-us')
-    else:
-        contact_form = ContactForm()
-    return render(request, 'scholarship_post/contact_us.html', {'contact_form': contact_form})
 
 # ADMIN DASHBOARD
 @login_required

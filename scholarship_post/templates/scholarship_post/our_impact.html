@@ -8,11 +8,11 @@
 
 {% block content %}
 <div class="container my-4">
-    <h5 class="text-center fs-5 fw-bold text-primary mb-4">Our Impact Stories</h5>
+    <h5 class="text-center fs-5 fw-bold text-primary mb-4">Our Impact Story</h5>
 
      {% for message in messages %}
         {% if message %}
-            <div class="{{ message.tags }} text-success text-center mb-3">
+            <div class="{{ message.tags }} text-success text-center mb-3 success-message">
                 {{ message }}
             </div>
             {% endif %}

@@ -16,7 +16,6 @@ urlpatterns = [
     path('delete_scholarship/delete/<int:pk>/', views.delete_scholarship, name='delete-scholarship'),
     path('scholarship_detail/<int:pk>/', views.scholarship_detail, name='scholarship-detail'),
     path('scholarship_update/update/<int:pk>/', views.update_scholarship, name='update-scholarship'),
-    path('Contact-us/', views.ContactUsView, name='contact-us'),
     path('impact/', views.impact, name='impact'),
     path('admin_dashboard/', views.admin_dashboard, name='admin-dashboard'),
     path('our_impact/', views.our_impact, name='our-impact'),

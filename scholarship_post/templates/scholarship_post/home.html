@@ -3,6 +3,7 @@
 
 {% block css%}
 <link rel="stylesheet" href="{% static 'scholarship_post/home.css' %}">
+<link rel="stylesheet" href="{% static 'scholarship_post/contact_us.css' %}">
 {% endblock css%}
 
 {% block content %}
@@ -40,7 +41,10 @@
             <a class="nav-link text-dark fw-semibold" href="{% url 'scholarship_post:scholarship-blog-list' %}">Scholarship</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link text-dark fw-semibold" href="{% url 'scholarship_post:contact-us' %}">Contact</a>
+            <a class="nav-link text-dark fw-semibold" href="#">Our Team</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link text-dark fw-semibold" href="#our-address">Contact</a>
           </li>
         </ul>
 
@@ -316,13 +320,71 @@
     </div>
 </div>
 
+<!-- Our Address -->
+<div class="container mt-5" id="our-address">
+  <h5 class="text-primary fw-bold text-center mb-4">Our Address</h5>
+  <div class="row g-4">
+
+    <!-- Column 1: Map -->
+    <div class="col-md-4">
+      <div class="bg-white shadow-sm p-3 rounded h-100">
+        <h6 class="fw-semibold mb-3">Location</h6>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.646472920248!2d34.861167!3d3.713893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1715f4d51f03e3c1%3A0x7e3e6316dd49b154!2sKakuma%20Refugee%20Camp!5e0!3m2!1sen!2ske!4v1689148393111!5m2!1sen!2ske" 
+          width="100%" 
+          height="250" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Column 2: Contact Info -->
+    <div class="col-md-4">
+      <div class="bg-white shadow-sm p-4 rounded h-100">
+        <h6 class="fw-semibold mb-3">Contact Info</h6>
+        <p class="mb-2"><strong>Phone:</strong> +254 718 388 947</p>
+        <p class="mb-2"><strong>Email:</strong> camp2campus@gmail.com</p>
+        <h6 class="fw-semibold mt-4 mb-2">Follow Us</h6>
+        <div class="d-flex gap-3">
+          <a href="https://www.facebook.com/profile.php?id=100085325694633" class="text-primary fs-5"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/invites/contact/?i=1cku3tvd4fig7&utm_content=lvbtzvo" class="text-danger fs-5"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/kuku-abass" class="text-dark fs-5"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 3: Contact Form -->
+    <div class="col-md-4">
+      <div class="bg-white shadow-sm p-4 rounded h-100">
+        <h6 class="form-header text-dark fw-semibold text-center mb-3">Send a Message</h6>
+
+        {% for message in messages %}
+          {% if message %}
+            <div class="{{ message.tags }} text-success text-center mt-2 success-message">
+              {{ message }}
+            </div>
+          {% endif %}
+        {% endfor %}
+
+        <form method="POST">
+          {% csrf_token %}
+          {{ contact_form.as_p }}
+          <button type="submit" class="btn btn-primary w-100 mb-3">Submit</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <!-- Footer -->
 <div class="footer bg-body-secondary mt-5">
     <footer class="text-center py-3">
-        <p class="mb-0 text-dark fw-medium">&copy; 2024 Camp2Campus | All Rights Reserved</p>
+        <p class="mb-0 text-dark fw-medium">&copy; 2026 Camp2Campus | All Rights Reserved</p>
     </footer>
 </div>
-
 
 {% endblock content %}

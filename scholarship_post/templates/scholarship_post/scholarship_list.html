@@ -11,11 +11,11 @@
 <header>
     <nav class="navbar navbar-expand-lg bg-body-secondary fixed-top shadow-sm">
         <div class="container-fluid">
-            
+
             <!-- Toggler -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -24,13 +24,14 @@
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item mx-3">
                         {% if user.is_staff or user.is_superuser %}
-                            <a class="nav-link nav-hover text-dark fw-bold" href="{% url 'scholarship_post:admin-dashboard' %}">
-                                Dashboard
-                            </a>
+                        <a class="nav-link nav-hover text-dark fw-bold"
+                            href="{% url 'scholarship_post:admin-dashboard' %}">
+                            Dashboard
+                        </a>
                         {% else %}
-                            <a class="nav-link nav-hover text-dark fw-bold" href="{% url 'scholarship_post:home' %}">
-                                Home
-                            </a>
+                        <a class="nav-link nav-hover text-dark fw-bold" href="{% url 'scholarship_post:home' %}">
+                            Home
+                        </a>
                         {% endif %}
                     </li>
                 </ul>
@@ -56,7 +57,8 @@
                 <div>
                     <h2 class="fs-5 text-dark fw-bold mb-2">{{ scholarship.title }}</h2>
                     <p class="text-dark mb-3">{{ scholarship.content|linebreaks|truncatewords:20 }}</p>
-                    <a href="{% url 'scholarship_post:scholarship-detail' scholarship.pk %}" class="text-decoration-none text-primary mb-3 d-inline-block">Read More</a>
+                    <a href="{% url 'scholarship_post:scholarship-detail' scholarship.pk %}"
+                        class="text-decoration-none text-primary mb-3 d-inline-block">Read More</a>
 
                     <p class="text-dark mb-2">
                         <span class="fw-semibold">Eligibility Criteria:</span><br>
@@ -70,7 +72,8 @@
                 </div>
 
                 <div class="mt-3">
-                    <a href="{{ scholarship.link }}" target="_blank" class="btn btn-outline-primary btn-sm mb-2">Apply Here</a>
+                    <a href="{{ scholarship.link }}" target="_blank" class="btn btn-outline-primary btn-sm mb-2">Apply
+                        Here</a>
                     <p class="text-muted small mb-0">
                         Posted by <span class="fw-semibold">{{ scholarship.created_by.username }}</span> on {{ scholarship.created_at }}
                     </p>
